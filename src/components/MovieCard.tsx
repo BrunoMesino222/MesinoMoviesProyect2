@@ -4,21 +4,21 @@ import {RatingCustom} from '../components/Rating'
 export const CardComponent = ({data}:CardComponentT) => {
     const {title, poster_path,overview, vote_average, genre_ids, id} = data;
     return(
-        <Card sx={{ maxWidth: 220 }}>
+        <Card sx={{ maxWidth: 130, maxHeight: 350 ,mx: 0.1}}>
             <CardMedia
+                sx={{objectFit: "cover"}}
                 component="img"
-                height="200"
+                height="55%"
+                width="100%"
                 image={ `https://image.tmdb.org/t/p/w500/${poster_path}`}/>
-            <CardContent>
-                <Typography variant="h6" sx={{mt:1}}>{title}</Typography>
+            <CardContent sx={{width:130}}>
+                <Typography variant="subtitle2" sx={{mt:0.1}}>{title}</Typography>
                 <Divider/>
-                {genre_ids && <Typography sx={{mt:0.5}}>{genre_ids[0]}</Typography>}
-                <Typography sx={{mt:0.5}}>Description:</Typography> 
+                {genre_ids && <Typography variant="subtitle2" sx={{mt:0.1}}>{genre_ids[0]}</Typography>}
+                
             </CardContent>
-            <CardActions>
-                <Button fullWidth variant="contained" size="small"></Button>
-            </CardActions>
-            <RatingCustom movie_id={id || 0}/>
+            <RatingCustom movie_id={id || 0} />
+
         </Card>
     )
 } 

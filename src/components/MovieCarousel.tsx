@@ -26,7 +26,7 @@ export const MovieCarousel = ({target='upcoming'}:MovieCarouselT) => {
       return(<>cargandooo</>)
     }
     return (
-        <Box>
+        <Box sx={{}}>
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
@@ -67,11 +67,11 @@ export const MovieCarousel = ({target='upcoming'}:MovieCarouselT) => {
         responsiveProps={[
           {
             itemsToShow: 10,
-            itemsToScroll: 5,
+            itemsToScroll: 8,
             minWidth: 768,
           },
         ]}
-        speed={400}
+        speed={1000}
         easing="linear"
       >
             {result.map((data:MovieType)=>{
