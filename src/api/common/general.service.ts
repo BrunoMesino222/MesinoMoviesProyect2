@@ -3,7 +3,6 @@ import { api } from "./api.base";
 
 const api_key= "2c6cd383602f9dd84e2c543271f39c40";
 
-
 export const general = {
   getSessionId: function(){
     const endpoint = '/authentication/guest_session/new'

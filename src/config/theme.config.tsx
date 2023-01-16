@@ -6,7 +6,7 @@ type ThemeProp = {
 }
 
 export enum themePalette {
-    BG = "#FFBE86",
+    BG = "#000000",
     LIME = "#f95950",
     FONT_GLOBAL = "'JetBrains Mono', monospace",
 };

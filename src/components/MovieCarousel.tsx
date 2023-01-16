@@ -26,7 +26,7 @@ export const MovieCarousel = ({target='upcoming'}:MovieCarouselT) => {
       return(<>cargandooo</>)
     }
     return (
-        <Box sx={{}}>
+        <Box sx={{backgroundColor:"black"}}>
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}
