@@ -5,17 +5,17 @@ export const HomePage: React.FC<{}> = () =>{
     return(
             <Box sx={{backgroundColor:"black" ,display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', rowGap: 3, mt:8}}>
                 <Box>
-                    <Typography variant="h3" sx={{mb:1.5, ml:2.5}}>Upcoming</Typography>
+                    <Typography variant="subtitle2" fontSize={35} sx={{mb:1.5, ml:2.5, borderTop:5}}>Upcoming</Typography>
                     <MovieCarousel target='upcoming'/>
                 </Box>
 
                 <Box>
-                    <Typography variant="h3" sx={{mb:1.5, ml:2.5}}>Popular</Typography>
+                    <Typography variant="subtitle2" fontSize={35} sx={{mb:1.5, ml:2.5, borderTop:3, borderColor:"black"}}>Popular</Typography>
                     <MovieCarousel target='popular'/>
                 </Box>
 
                 <Box>
-                    <Typography variant="h3" sx={{mb:1.5, ml:2.5}}>Top rated</Typography>
+                    <Typography variant="subtitle2" fontSize={35} sx={{mb:1.5, ml:2.5, borderTop:3, borderColor:"black"}}>Top rated</Typography>
                     <MovieCarousel target='top_rated'/>
                 </Box>
             

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Box, AppBar, Toolbar, Grid, Container} from "@mui/material";
+import {Box, AppBar, Toolbar, Grid, Container, CardMedia} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Stack } from "@mui/system";
 import { general } from "../api/common/general.service";
@@ -71,10 +71,16 @@ export const NavBar: React.FC<{}> = ( ) =>{
                         alignItems="center"
                         >
                             <Grid item>
-                            <Button variant="contained" onClick={() => navigate('/')}>
-                               
+                            <Button  onClick={() => navigate('/')}>
+                            <CardMedia
+                            
+                            height={65}
+                            width={65}
+                            component="img"
+                            image={"https://cdn-icons-png.flaticon.com/512/3223/3223000.png"}/>
                             </Button>
                             </Grid>
+                            <Typography variant="subtitle1" fontSize={40}>Mesino movies</Typography>
                             <Grid item>
                                 <Stack direction="row" spacing={2}>
                                     <ButtonSessionContent onClick={initiateSession} isLoading={isLoading} status={sessionAttemptStatus}/>
