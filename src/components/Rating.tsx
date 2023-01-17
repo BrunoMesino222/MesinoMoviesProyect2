@@ -53,7 +53,8 @@ export const RatingCustom = ({movie_id}:{movie_id:number}) => {
   const { sessionId} = useStore()
   const [rating, setRating] = React.useState<number>(4)
   const [loading, setLoading] = React.useState<boolean>(false)
-  function rateMovie(value:number){
+  function rateMovie(e:any,value:number){
+    e?.stopPropagation()
     setLoading(true)
     logged.rateMovie(sessionId?.guest_session_id, value, movie_id).then((r:any)=>{
     setRating(r.data.results)
@@ -68,7 +69,7 @@ return (
       name="highlight-selected-only"
       disabled={loading}
       defaultValue={rating || 4}
-      onChange={(e:any)=>rateMovie(e.target.value)}
+      onChange={(e:any)=>rateMovie(e,e.target.value)}
       IconContainerComponent={IconContainer}
       getLabelText={(value: number) => customIcons[value].label}
       highlightSelectedOnly

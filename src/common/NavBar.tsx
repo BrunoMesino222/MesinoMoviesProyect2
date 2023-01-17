@@ -8,7 +8,10 @@ import { useStore } from "../store";
 import { ButtonSessionContent } from "../components/content/ButtonSessionContent";
 import LogoutIcon from '@mui/icons-material/Logout';
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
+
 export const NavBar: React.FC<{}> = ( ) =>{
+    const navigate = useNavigate()
     const { sessionId,setSession } = useStore()
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [sessionAttemptStatus, setSessionAttemptStatus] = useState<'success' | 'failure'>()
@@ -68,7 +71,9 @@ export const NavBar: React.FC<{}> = ( ) =>{
                         alignItems="center"
                         >
                             <Grid item>
-                                <Typography>asdasd</Typography>
+                            <Button variant="contained" onClick={() => navigate('/')}>
+                               
+                            </Button>
                             </Grid>
                             <Grid item>
                                 <Stack direction="row" spacing={2}>

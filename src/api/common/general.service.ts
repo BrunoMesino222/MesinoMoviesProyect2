@@ -3,6 +3,7 @@ import { api } from "./api.base";
 
 const api_key= "2c6cd383602f9dd84e2c543271f39c40";
 
+
 export const general = {
   getSessionId: function(){
     const endpoint = '/authentication/guest_session/new'
@@ -28,16 +29,29 @@ export const general = {
   },
   
   getById: function(id:string){
-    const endpoint= `/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity
+    const endpoint= `/movie/${id}?api_key=${api_key}&language=en-US&sort_by=popularity
     .desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
-    return api.get(endpoint, {params:{
-      id
-    }
-  })
+    return api.get(endpoint,{})
   }
 }
 
 export const logged = {
+  saveToFavorite: function (session_id: string ){
+    const endpoint = `/account/${session_id}/favorite?api_key=${api_key}&guest_session_id=${session_id}`
+    return api.post(endpoint,{
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    }
+  })
+  },
+  addToWatchlist: function (session_id: string ){
+    const endpoint = `/account/${session_id}/watchlist?api_key=${api_key}&guest_session_id=${session_id}`
+    return api.post(endpoint,{
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    }
+  })
+  },
   rateMovie: function(session_id:string, value:number, movie_id: number){
     const endpoint = `/movie/${movie_id}/rating?api_key=${api_key}&guest_session_id=${session_id}`
     return api.post(endpoint, {

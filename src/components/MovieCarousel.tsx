@@ -13,7 +13,7 @@ export const MovieCarousel = ({target='upcoming'}:MovieCarouselT) => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     const [loading, setLoading] = useState<boolean>(true);
 
-    React.useEffect(()=>{
+    useEffect(()=>{
         general.getAll({page:1, target}).then((r:any)=>{
             console.log(r.data)
             setResult(r.data.results)
