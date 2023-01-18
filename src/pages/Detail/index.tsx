@@ -127,5 +127,5 @@ export const Detail = () => {
             </Grid>
         </Box>
 
-        return <>cargandooo</>
+        return <>cargando...</>
 }

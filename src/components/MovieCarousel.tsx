@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Box from "@mui/material/Box"
-import Stack from '@mui/material/Stack'
 import { MovieType } from './MovieCard.types'
 import { general } from '../api/common/general.service'
 import { MovieCarouselT } from './MovieCarousel.types'
 import { CardComponent } from './MovieCard'
-import Carousel from './modules/Carousel'
 import ReactSimplyCarousel from 'react-simply-carousel';
 
 export const MovieCarousel = ({target='upcoming'}:MovieCarouselT) => {
@@ -23,7 +21,7 @@ export const MovieCarousel = ({target='upcoming'}:MovieCarouselT) => {
         }).finally(()=>setLoading(false))
     },[])
     if (loading) {
-      return(<>cargandooo</>)
+      return(<>Cargando...</>)
     }
     return (
         <Box sx={{backgroundColor:"black"}}>

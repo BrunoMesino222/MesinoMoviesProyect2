@@ -80,7 +80,7 @@ export const NavBar: React.FC<{}> = ( ) =>{
                             image={"https://cdn-icons-png.flaticon.com/512/3223/3223000.png"}/>
                             </Button>
                             </Grid>
-                            <Typography variant="subtitle1" fontSize={40}>Mesino movies</Typography>
+                            <Typography variant="subtitle1" fontSize={40}>MESINO MOVIES</Typography>
                             <Grid item>
                                 <Stack direction="row" spacing={2}>
                                     <ButtonSessionContent onClick={initiateSession} isLoading={isLoading} status={sessionAttemptStatus}/>
