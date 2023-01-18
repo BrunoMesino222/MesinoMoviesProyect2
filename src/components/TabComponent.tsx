@@ -2,6 +2,7 @@ import {Box, Tab, Typography} from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import React, {useState} from "react";
 import { MovieCarousel } from "./MovieCarousel";
+import {ShowCarousel} from "./ShowCarousel";
 
 export const MuiTabs = () => {
     const [value, setValue] = useState("1")
@@ -34,7 +35,21 @@ export const MuiTabs = () => {
                     <MovieCarousel target='top_rated'/>
                 </Box>
                 </TabPanel>
-                <TabPanel value="2">Shows</TabPanel>
+                <TabPanel value="2">
+                <Box>
+                    <Typography variant="subtitle2" fontSize={35} sx={{mb:1.5, ml:2.5}}>On the air</Typography>
+                    <ShowCarousel target='on_the_air'/>
+                </Box>
+                <Box>
+                    <Typography variant="subtitle2" fontSize={35} sx={{mb:1.5, ml:2.5, borderTop:3, borderColor:"black"}}>Popular</Typography>
+                    <ShowCarousel target='popular'/>
+                </Box>
+
+                <Box>
+                    <Typography variant="subtitle2" fontSize={35} sx={{mb:1.5, ml:2.5, borderTop:3, borderColor:"black"}}>Top rated</Typography>
+                    <ShowCarousel target='top_rated'/>
+                </Box>
+                </TabPanel>
             </TabContext>
         </Box>
     )

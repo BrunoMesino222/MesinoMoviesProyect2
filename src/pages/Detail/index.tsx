@@ -13,6 +13,7 @@ import imbdLogo from './imbdlogo.svg'
 import Card from '@mui/material/Card'
 import LanguageIcon from '@mui/icons-material/Language';
 import { Stack } from '@mui/system'
+
 export const Detail = () => {
     const { movieId} = useParams()
     const { sessionId } = useStore()

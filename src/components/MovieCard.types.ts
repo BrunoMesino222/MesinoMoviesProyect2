@@ -6,6 +6,7 @@ export type MovieType = {
     genre_ids?: number[],
     id?: number,
     vote_average?: number
+    name?: string
 }
 export type CardComponentT = {
     data:MovieType

@@ -25,6 +25,7 @@ export const general = {
     return api.get(endpoint, {params:{
       page
     }
+  
   })
   },
   
@@ -37,7 +38,18 @@ export const general = {
   getGenre: function(id:string){
     const endpoint= `genre/movie/list${id}?api_key=${api_key}&language=en-US`;
     return api.get(endpoint)
+  },
+
+  getShows: function({page = 1, target='popular'}:{page:number, target:MovieQuery}){
+    const endpoint= `/tv/${target}?api_key=${api_key}&language=en-US&sort_by=popularity
+    .desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
+    return api.get(endpoint, {params:{
+      page
+    }
+  
+  })
   }
+  
 }
 
 export const logged = {

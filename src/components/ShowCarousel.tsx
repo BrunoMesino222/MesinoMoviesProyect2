@@ -6,13 +6,13 @@ import { MovieCarouselT } from './MovieCarousel.types'
 import { CardComponent } from './MovieCard'
 import ReactSimplyCarousel from 'react-simply-carousel';
 
-export const MovieCarousel = ({target='upcoming'}:MovieCarouselT) => {
+export const ShowCarousel = ({target='upcoming'}:MovieCarouselT) => {
     const [ result, setResult ] = useState<MovieType[]>([])
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(()=>{
-        general.getAll({page:1, target}).then((r:any)=>{
+        general.getShows({page:1, target}).then((r:any)=>{
             console.log(r.data)
             setResult(r.data.results)
             
