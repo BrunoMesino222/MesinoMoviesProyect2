@@ -9,7 +9,7 @@ export const CardComponent = ({data}:CardComponentT) => {
     const {title, poster_path,overview, vote_average, genre_ids, id, name} = data;
     const navigate = useNavigate()
     return(
-        <Card sx={{ width: 130, height: 350 ,mx: 0.5, cursor: 'pointer', borderRadius:1.5, borderColor:"error.main", border:0.2}} onClick={()=>navigate(`./detail/${name?"tv":"movie"}/${id}`)} >
+        <Card sx={{ width: 130, height: 350 ,mx: 0.5, cursor: 'pointer', borderRadius:1.5}} onClick={()=>navigate(`./detail/${name?"tv":"movie"}/${id}`)} >
             <CardMedia
                 sx={{objectFit: "cover"}}
                 height= "200"

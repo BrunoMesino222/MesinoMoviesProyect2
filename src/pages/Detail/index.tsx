@@ -60,34 +60,34 @@ export const Detail = () => {
                 <Grid item xs={9} style={{marginTop: 36, marginBottom:12}} >
                     
                 <Box style={{backgroundColor: 'rgba(0.25,0.25,0.25,0.3)', marginTop: 16, padding: 12, boxShadow:'rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset'}}>
-                    <Typography color='black' fontWeight='bold' variant='h6'>
+                    <Typography color='white' fontWeight='bold' variant='h6'>
                     <PlayCircleIcon fontSize='large'/>  {data?.tagline}
                     </Typography>
-                    <Typography  style={{marginTop:12}}color='black' fontWeight='semibold' variant='body1'>
+                    <Typography  style={{marginTop:12}}color='white' fontWeight='semibold' variant='body1'>
                             {data?.overview}
                     </Typography>
                     </Box>
                     <Box style={{backgroundColor: 'rgba(0.25,0.25,0.25,0.3)', marginTop: 16, padding: 12, boxShadow:'rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset'}}>
                         <MovieFilterIcon  fontSize='large'color={data?.status === 'Released' ? 'success' : 'primary'}/>
-                        <Typography color='black' fontWeight='bold' variant='body1'>
+                        <Typography color='white' fontWeight='bold' variant='body1'>
                             Date: {data?.release_date} 
                         </Typography> 
                         <Box style={{display: 'flex', flexDirection: 'row'}}>
-                        <Typography color='black' fontWeight='bold' variant='body1'>
+                        <Typography color='white' fontWeight='bold' variant='body1'>
                             Status: {data?.status} -
                         </Typography> 
-                        <Typography color='black' fontWeight='bold' variant='body1'>
+                        <Typography color='white' fontWeight='bold' variant='body1'>
                         - Duration {data?.runtime} minutes
                         </Typography> 
                         </Box>
                         <a href={`https://www.imdb.com/title/${data.imdb_id}/?ref_=nv_sr_srsg_0`} target='_blank' style={{textDecoration:'none'}}>
-                        <Typography color='black' fontWeight='bold' variant='body1' style={{alignItems:'center',  display: 'flex', cursor: 'pointer'}}>
+                        <Typography color='white' fontWeight='bold' variant='body1' style={{alignItems:'center',  display: 'flex', cursor: 'pointer'}}>
                                 Watch on <img src={imbdLogo} style={{marginLeft: 12}}/>
                         </Typography> 
                         </a>
                         
                         <a href={data?.homepage} target='_blank' style={{textDecoration:'none'}}>
-                        <Typography color='black' fontWeight='bold' variant='body2' style={{alignItems:'center',  display: 'flex', cursor: 'pointer', marginTop: 10}}>
+                        <Typography color='white' fontWeight='bold' variant='body2' style={{alignItems:'center',  display: 'flex', cursor: 'pointer', marginTop: 10}}>
                         <LanguageIcon color='info' style={{fontWeight: 600}}/> {data?.homepage}
                         </Typography> 
                         </a>
@@ -97,14 +97,14 @@ export const Detail = () => {
                     <Box style={{backgroundColor: 'rgba(0.25,0.25,0.25,0.3)', marginTop: 16,  padding: 12, boxShadow:'rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset'}}>
                         <PaidIcon fontSize='large' color={data?.revenue>data?.budget ? 'warning' : 'error'}/>
                         <Box style={{display: 'flex', flexDirection: 'row'}}>
-                        <Typography color='black' fontWeight='bold' variant='body1'>
+                        <Typography color='white' fontWeight='bold' variant='body1'>
                         Budget: ${data?.budget} -
                         </Typography> 
-                        <Typography color='black' fontWeight='bold' variant='body1'>
+                        <Typography color='white' fontWeight='bold' variant='body1'>
                         - Revenew: ${data?.revenue}
                         </Typography> 
                         </Box>
-                        <Typography color='black' fontWeight='bold' variant='body1'>
+                        <Typography color='white' fontWeight='bold' variant='body1'>
                         Estimate {data?.revenue>data?.budget ? 'earning' : 'loss'}: 
                         </Typography>
                         <Typography color={data?.revenue>data?.budget ? 'green' : 'error'} fontWeight='bold' variant='body1'>{data?.revenue>data?.budget ? '$' : '-$'}{Math.abs(data?.revenue - data?.budget)}</Typography>
