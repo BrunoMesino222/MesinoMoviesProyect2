@@ -3,6 +3,7 @@ export type DetailT = {
     backdrop_path: string,
     budget: number,
     original_title: string,
+    original_name: string,
     revenue: number,
     tagline: string,
     poster_path:string,

@@ -15,14 +15,14 @@ import LanguageIcon from '@mui/icons-material/Language';
 import { Stack } from '@mui/system'
 
 export const Detail = () => {
-    const { movieId} = useParams()
+    const { movieId, target } = useParams()
     const { sessionId } = useStore()
     const [data, setData] = useState<DetailT>()
     const [isFavorite, setIsFavorite] = useState<boolean>(false)
     const [isWatchlist, setIsWatchlist] = useState<boolean>(false)
     React.useEffect(()=>{
         if ( movieId ){
-            general.getById(movieId).then((r:any)=>{
+            general.getById(target ,movieId).then((r:any)=>{
                 console.log(r.data)
                 setData(r.data)
                 setIsFavorite(false)
@@ -54,7 +54,7 @@ export const Detail = () => {
             <Grid container >
             <Grid item xs={5} style={{position:'relative',  display:'flex', flexDirection:'column', alignItems:'center'}}>
             <Typography color='black' fontWeight='bold' variant='h4'>
-                {data?.original_title}
+                {data?.original_title}{data?.original_name}
             </Typography>
             
                 <Grid item xs={9} style={{marginTop: 36, marginBottom:12}} >

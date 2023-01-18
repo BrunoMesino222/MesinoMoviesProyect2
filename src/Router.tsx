@@ -11,7 +11,7 @@ export const AppRouter: React.FC<{}> = () => {
         <Routes>
             <Route path="/" element={<RouterLayout/>}>
                 <Route path="/" element={<HomePage/>}/>
-                <Route path="/detail/:movieId" element={<Detail/>}/>
+                <Route path="/detail/:target/:movieId" element={<Detail/>}/>
             </Route>
         </Routes>
     );

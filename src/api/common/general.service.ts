@@ -29,8 +29,8 @@ export const general = {
   })
   },
   
-  getById: function(id:string){
-    const endpoint= `/movie/${id}?api_key=${api_key}&language=en-US&sort_by=popularity
+  getById: function(target?:string ,id?:string){
+    const endpoint= `/${target}/${id}?api_key=${api_key}&language=en-US&sort_by=popularity
     .desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
     return api.get(endpoint,{})
   },
